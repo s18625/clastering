@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Centroid {
-    int k;
+    private int parametrAcount;
     private List<Double> cetroidxyz;
-    private  int clas;
+    private int clas;
 
 
     public int getClas() {
@@ -24,20 +24,21 @@ public class Centroid {
     }
 
     public Centroid(List<Point> list) {
-         k = list.get(0).getParameters().size();
+        parametrAcount = list.get(0).getParameters().size();
         clas = list.get(0).getKlasa();
         setxyz(list);
 
     }
-    public void setxyz(List<Point> list){
+
+    public void setxyz(List<Point> list) {
         cetroidxyz = new ArrayList<>();
 
-        for (int i =0; i<k; i++){
-            double x= 0;
-            for (int j =0; j<list.size();j++){
+        for (int i = 0; i < parametrAcount; i++) {
+            double x = 0;
+            for (int j = 0; j < list.size(); j++) {
                 x += list.get(j).getParameters().get(i);
             }
-            cetroidxyz.add( x/list.size());
+            cetroidxyz.add(x / list.size());
         }
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class DaraReader {
 
-     static List<Point> listOfPoints;
+    static List<Point> listOfPoints;
 
 
     public DaraReader(String fileName, int k) throws IOException {
@@ -15,11 +15,11 @@ public class DaraReader {
 
         listOfPoints = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        String line ;
-        while ((line=reader.readLine())!= null){
+        String line;
+        while ((line = reader.readLine()) != null) {
             int iloscKlas = Main.k;
             String s[] = line.split(",");
-            Point point = new Point(s,iloscKlas);
+            Point point = new Point(s, iloscKlas);
             listOfPoints.add(point);
         }
     }
